@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Positive Instagram Feed",
+  "version": "1.0",
+  "description": "Hides negative content on Instagram and shows only positive posts",
+  "permissions": ["scripting"],
+  "host_permissions": [
+    "https://www.instagram.com/*",
+    "http://localhost:3000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
